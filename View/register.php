@@ -35,30 +35,30 @@ unset($_SESSION['errors']);
             <?php echo generateLogState(); ?>
 
             <div class="container">
-                <form method="post" action="">
+                <form id="register-form" method="post" action="">
                     <div class="input-box">
                         <img src="../assets/img/login.png" alt="login icon" title="login">
-                        <input type="text" name="login" placeholder="Login" required>
+                        <input id="login" type="text" name="login" placeholder="Login" required>
                     </div>
 
                     <div class="input-box">
                         <img src="../assets/img/login.png" alt="firstname icon" title="firstname">
-                        <input type="text" name="firstname" placeholder="Firstname" required>
+                        <input id="firstname" type="text" name="firstname" placeholder="Firstname" required>
                     </div>
 
                     <div class="input-box">
                         <img src="../assets/img/login.png" alt="lastname icon" title="lastname">
-                        <input type="text" name="lastname" placeholder="Lastname" required>
+                        <input id="lastname" type="text" name="lastname" placeholder="Lastname" required>
                     </div>
 
                     <div class="input-box">
                         <img src="../assets/img/password.png" alt="password icon" title="password">
-                        <input type="password" name="password" placeholder="Password" required>
+                        <input id="password" type="password" name="password" placeholder="Password" required>
                     </div>
 
                     <div class="input-box">
                         <img src="../assets/img/password.png" alt="password icon" title="confirm password">
-                        <input type="password"name="confirm_password" placeholder="Confirm Password" required>
+                        <input id="confirm_password" type="password"name="confirm_password" placeholder="Confirm Password" required>
                     </div>
                     
                     <?php if (!empty($errors)) : ?>

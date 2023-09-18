@@ -19,7 +19,7 @@ session_start();
 
         <script src="assets/js/main.js"></script>
 
-        <title>Module de Connexion B2</title>
+        <title>Super Reminder</title>
     </head>
 
     <body>
@@ -29,11 +29,13 @@ session_start();
 
             <?php echo generateLogStateIndex(); ?>
 
-            <h1>Bienvenue sur le Module de Connexion</h1>
+            <h1>Bienvenue sur le Super Reminder</h1>
 
             <div class="buttons">
                 <a href="View/register.php" class="button">Inscription</a>
                 
+                <a href="" class="button">Reminder</a>
+
                 <a href="View/login.php" class="button">Connexion</a>
             </div>
 
