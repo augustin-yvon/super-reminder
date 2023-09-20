@@ -1,22 +1,11 @@
 <?php
-require_once '../Model/User.php';
-require_once '../Model/SqlRequest.php';
+require_once './Model/SqlRequest.php';
 
-session_start();
-
-$request = new SqlRequest();
-
-$errors = array();
-
-// Vérifie si le formulaire a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupére les données du formulaire
-    $login = htmlspecialchars($_POST["login"]);
-    $firstname = htmlspecialchars($_POST["firstname"]);
-    $lastname = htmlspecialchars($_POST["lastname"]);
-    $password = htmlspecialchars($_POST["password"]);
-    $confirmPassword = htmlspecialchars($_POST["confirm_password"]);
-
+function validateRegister(string $login, string $firstname, string $lastname, string $password, string $confirm_password) {
+    $request = new SqlRequest();
+    
+    $errors = array();
+    echo 'coucouController';
     // Vérifie si le login est déjà utilisé
     if ($request->validateLogin($login)) {
         $errors[] = "Ce login est déjà utilisé. Veuillez en choisir un autre.";
@@ -29,20 +18,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Vérifie si les mots de passe correspondent
-    if ($password !== $confirmPassword) {
+    if ($password !== $confirm_password) {
         $errors[] = "Les mots de passe ne correspondent pas.";
     }
 
     // Insére les données dans la base de données si aucune erreur n'est survenue
     if (empty($errors)) {
-        unset($_SESSION['errors']);
         if ($request->register($login, $firstname, $lastname, $password)) {
-            header("Location: ../View/login.php");
-            exit();
+            header("Location: ../index.php");
+            return true;
         }
     }else {
         $_SESSION['errors'] = $errors;
-        header("Location: ../View/register.php");
-        exit();
+        // header("Location: ../dataController.php");
+        return false;
     }
 }
