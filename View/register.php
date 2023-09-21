@@ -1,10 +1,5 @@
 <?php
 session_start();
-
-if (isset($_SESSION['errors'])) {
-    $errors = $_SESSION['errors'];
-    var_dump($_SESSION['user']);
-}
 ?>
 
 <!DOCTYPE html>
@@ -36,18 +31,11 @@ if (isset($_SESSION['errors'])) {
 
                     <input id="confirm_password" type="password"name="confirm_password" placeholder="Confirm Password" required>
 
-                    <input type="submit" value="Sign up">
+                    <div id="error-container"></div>
 
-                    <?php if (!empty($errors)) : ?>
-                        <div class="error">
-                            <?php foreach ($errors as $error) : ?>
-                                <p><?php echo $error; ?></p>
-                            <?php endforeach; ?>
-                        </div>
-                    <?php endif; ?>
+                    <input type="submit" name="submit" value="Sign up">
 
-                    <p>Déjà inscrit ? <a href="login.php">Connectez-vous</a></p>
-                    
+                    <p id="refer">Déjà inscrit ? <a href="login.php">Connectez-vous</a></p>
                 </form>
             </div>
         </section>

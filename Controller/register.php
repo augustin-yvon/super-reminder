@@ -1,11 +1,12 @@
 <?php
+session_start();
+
 require_once './Model/SqlRequest.php';
 
 function validateRegister(string $login, string $firstname, string $lastname, string $password, string $confirm_password) {
     $request = new SqlRequest();
     
     $errors = array();
-    echo 'coucouController';
     // Vérifie si le login est déjà utilisé
     if ($request->validateLogin($login)) {
         $errors[] = "Ce login est déjà utilisé. Veuillez en choisir un autre.";
@@ -25,12 +26,9 @@ function validateRegister(string $login, string $firstname, string $lastname, st
     // Insére les données dans la base de données si aucune erreur n'est survenue
     if (empty($errors)) {
         if ($request->register($login, $firstname, $lastname, $password)) {
-            header("Location: ../index.php");
             return true;
         }
     }else {
-        $_SESSION['errors'] = $errors;
-        // header("Location: ../dataController.php");
-        return false;
+        return $errors;
     }
 }

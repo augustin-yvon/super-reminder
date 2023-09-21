@@ -1,0 +1,7 @@
+login.php
+
+
+quand useer s'inscrit : redirect to login.php 
+quand user se connecte : redirect to profile
+creer page to do list 
+si user est non connecter et qu'il va sur to do list : redirect vers login | l'user doit etre connecté pour acceder a sa to do list 

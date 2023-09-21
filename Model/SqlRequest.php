@@ -18,8 +18,6 @@ class SqlRequest extends Database {
      * @return bool True si l'enregistrement réussit, sinon false.
      */
     public function register(string $login, string $firstname, string $lastname, string $password) : bool {
-echo 'coucouSQLrequest';
-
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         $registerQuery = "INSERT INTO user (login, firstname, lastname, password) VALUES (:login, :firstname, :lastname, :password)";
