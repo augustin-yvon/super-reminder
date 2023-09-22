@@ -5,12 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="assets/js/main.js"></script>
+        <link rel="stylesheet" href="./assets/css/index.css">
 
         <title>Super Reminder</title>
     </head>
 
     <body>
+        <header>
+            <nav>
+                <a href=""></a>
+            </nav>
+        </header>
 
         <section class="main-container">
 

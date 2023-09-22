@@ -1,5 +1,6 @@
 <?php
 require_once './Controller/register.php';
+require_once './Controller/login.php';
 
 if (isset($_GET['register'])) {
     $login = htmlspecialchars($_POST['login']);
@@ -13,6 +14,18 @@ if (isset($_GET['register'])) {
         echo json_encode(array("success" => true));
     } else {
         echo json_encode(array("errors" => $register));
+    }
+}
+
+if (isset($_GET['login'])) {
+    $login = htmlspecialchars($_POST['login']);
+    $password = htmlspecialchars($_POST['password']);
+
+    $login = connect($login, $password);
+    if ($login === true) {
+        echo json_encode(array("success" => true));
+    } else {
+        echo json_encode(array("errors" => $login));
     }
 }
 ?>

@@ -1,4 +1,4 @@
-let form = document.getElementById('register-form')
+let form = document.getElementById('login-form')
 
 form.addEventListener('submit', async (event) => {
     event.preventDefault(); // Empêcher la soumission du formulaire par défaut
@@ -10,24 +10,21 @@ form.addEventListener('submit', async (event) => {
         body: formData,
     };
 
-    let request = await fetch('../dataController.php?register', requestOptions)
+    let request = await fetch('../dataController.php?login', requestOptions)
     let response = await request.json()
     if (response['success']) {
-        window.location.href = "./login.php";
+        window.location.href = "../index.php";
     }else {
-        let errors = response['errors'];
+        let error = response['errors'];
         let errorContainer = document.getElementById('error-container');
 
         // Supprime les anciennes erreurs s'il y en a
         while (errorContainer.firstChild) {
             errorContainer.removeChild(errorContainer.firstChild);
         }
-
-        // Ajoute les nouvelles erreurs
-        errors.forEach(errorMessage => {
-            let errorParagraph = document.createElement('p');
-            errorParagraph.textContent = errorMessage;
-            errorContainer.appendChild(errorParagraph);
-        });
+        
+        let errorParagraph = document.createElement('p');
+        errorParagraph.textContent = error;
+        errorContainer.appendChild(errorParagraph);
     }
 });

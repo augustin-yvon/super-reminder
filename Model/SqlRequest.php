@@ -53,4 +53,42 @@ class SqlRequest extends Database {
             return false;
         }
     }
+
+    /**
+     * Vérifie si un nom d'utilisateur et un mot de passe correspondent dans la base de données.
+     *
+     * @param string $login Le nom d'utilisateur à vérifier.
+     * @param string $password Le mot de passe à vérifier.
+     * @return bool True si les identifiants correspondent, sinon false.
+     */
+    public function checkInfo(string $login, string $password) : bool {
+        $checkPasswdQuery = "SELECT password FROM user WHERE login = :login";
+
+        $stmt = $this->pdo->prepare($checkPasswdQuery);
+        $stmt->bindValue(':login', $login, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $hashedPassword = $result['password'];
+
+        return password_verify($password, $hashedPassword);
+    }
+
+    /**
+     * Obtient l'identifiant d'un utilisateur par son login.
+     *
+     * @param string $login Le nom d'utilisateur
+     * @return int|false L'identifiant de l'utilisateur s'il existe, sinon false.
+     */
+    public function getId(string $login) : int|false {
+        $selectIdQuery = "SELECT `id` FROM `user` WHERE `login` = :login";
+
+        $stmt = $this->pdo->prepare($selectIdQuery);
+        $stmt->bindValue(':login', $login, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $result = $stmt->fetchColumn();
+
+        return $result;
+    }
 }
