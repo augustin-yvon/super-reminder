@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../font/Montserrat-VariableFont_wght.ttf);
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -15,6 +20,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
+	font-family: Montserrat;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -39,4 +45,98 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+body{
+    width: 100vw;
+}
+
+/********************HEADER********************/
+
+header {
+    width: 100%;
+}
+
+.topNav {
+    display: flex;
+    justify-content: right;
+    background-color: white;
+    box-shadow: 0 2px 8px black;
+    border-bottom: 2px solid black;
+}
+
+.topNav a {
+    padding: 20px 30px;
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.topNav a:hover {
+    background-color: black;
+    color: white;
+    transition: 0.3s;
+}
+
+.topNav .icon {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 55px;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px black;
+    z-index: 1;
+}
+
+.mobile-menu a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px;
+    text-align: right;
+}
+
+@media screen and (max-width: 700px) {
+    .topNav a {
+        display: none;
+    }
+
+    .topNav .icon {
+        display: block;
+        padding: 20px 30px;
+    }
+
+    .mobile-menu.show {
+        display: flex;
+    }
+}
+
+/********************FOOTER********************/
+
+footer {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    border-top: 2px solid black;
+    box-shadow: 0 -2px 8px black;
+}
+
+footer p {
+    padding: 20px 0;
+    text-align: center;
+    color: black;
+    font-weight: 500;
+}
+
+footer p a {
+    color: black;
+    text-decoration: none;
+    font-style: italic;
 }

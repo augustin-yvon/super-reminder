@@ -69,9 +69,12 @@ class SqlRequest extends Database {
         $stmt->execute();
 
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
-        $hashedPassword = $result['password'];
-
-        return password_verify($password, $hashedPassword);
+        if ($result) {
+            $hashedPassword = $result['password'];
+            return password_verify($password, $hashedPassword);
+        } else {
+            return false;
+        }
     }
 
     /**

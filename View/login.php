@@ -10,15 +10,21 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script defer src="../assets/js/login.js"></script>
+        <script defer src="../assets/js/main.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../assets/css/login.css">
 
         <title>Gestionnaire de fichier</title>
     </head>
 
     <body>
+        <?php include '../html-element/header.php' ?>
 
         <section class="main-container">
-
             <div class="container">
+                <h1>Connexion</h1>
+
                 <form id="login-form" method="POST" action="">
 
                     <input id="login" type="text" name="login" placeholder="Login" required>
@@ -33,5 +39,7 @@ session_start();
                 </form>
             </div>
         </section>
+
+        <?php include '../html-element/footer.php' ?>
     </body>
 </html>

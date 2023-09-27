@@ -10,15 +10,21 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script defer src="../assets/js/register.js"></script>
+        <script defer src="../assets/js/main.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../assets/css/register.css">
 
         <title>Gestionnaire de fichier</title>
     </head>
 
     <body>
+        <?php include '../html-element/header.php' ?>
 
         <section class="main-container">
-
             <div class="container">
+                <h1>Inscription</h1>
+                
                 <form id="register-form" method="POST" action="">
 
                     <input id="login" type="text" name="login" placeholder="Login" required>
@@ -35,9 +41,11 @@ session_start();
 
                     <input type="submit" name="submit" value="Sign up">
 
-                    <p id="refer">Déjà inscrit ? <a href="login.php">Connectez-vous</a></p>
+                    <p class="refer">Déjà inscrit ? <a href="login.php">Connectez-vous</a></p>
                 </form>
             </div>
         </section>
+
+        <?php include '../html-element/footer.php' ?>
     </body>
 </html>
