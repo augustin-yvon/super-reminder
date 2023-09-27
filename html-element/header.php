@@ -10,7 +10,7 @@
 
     <nav class="mobile-menu">
         <a href="../index.php">HOME</a>
-        <a href="">REMINDER</a>
+        <a href="./reminder">REMINDER</a>
         <a href="./register.php">INSCRIPTION</a>
         <a href="./login.php">CONNEXION</a>
     </nav>

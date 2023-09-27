@@ -26,7 +26,7 @@
 
             <nav class="mobile-menu">
                 <a href="./index.php" class="button">HOME</a>
-                <a href="">REMINDER</a>
+                <a href="./View/reminder.php">REMINDER</a>
                 <a href="./View/register.php">INSCRIPTION</a>
                 <a href="./View/login.php">CONNEXION</a>
             </nav>
@@ -36,10 +36,10 @@
             <section class="container">
                 <h1>Bienvenue sur le Super Reminder</h1>
     
-                <div class="buttons">
+                <div class="buttons" id="ff">
                     <a href="./View/register.php" class="button">Inscription</a>
                     
-                    <a href="" class="button">Reminder</a>
+                    <a href="./View/reminder.php" class="button">Reminder</a>
     
                     <a href="./View/login.php" class="button">Connexion</a>
                 </div>

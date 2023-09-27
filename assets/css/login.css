@@ -2,7 +2,7 @@
 
 .main-container {
     width: 100%;
-    margin-top: 180px;
+    margin-top: 15vh;
     display: flex;
     justify-content: center;
 }
@@ -69,7 +69,7 @@ input[type='submit'] {
 
 @media screen and (min-width: 700px) {
     .main-container {
-        margin-top: 230px;
+        margin-top: 15vh;
     }
     
     .container {
