@@ -51,6 +51,9 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /********************HEADER********************/
@@ -124,8 +127,6 @@ header {
 footer {
     width: 100%;
     background-color: white;
-    position: fixed;
-    bottom: 0;
     border-top: 2px solid black;
     box-shadow: 0 -2px 8px black;
 }
