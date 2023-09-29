@@ -31,7 +31,7 @@
                     <!-- <li class="item">
                         <i class="fa fa-circle-thin co" job="complete" id="0"></i>
                         <p class="text">Drink Coffee</p>
-                        <i class="fa fa-trash-o de" job="delete" id="0"></i> 
+                        <i class="fa fa-trash-o de" job="delete" id="0"></i>
                     </li> -->
                 </ul>
             </div>

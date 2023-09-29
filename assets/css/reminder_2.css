@@ -39,9 +39,8 @@
 
 .trash {
     position: absolute;
-    right: 0;
+    right: 3%;
 }
-
 
 .add-to-do {
     position: absolute;
@@ -59,8 +58,8 @@
     fill: white;
     border: 1px solid #4162f6;
     border-radius: 50px;
-    padding: 2px;
     background-color: #4162f6;
+    padding: 2px;
     cursor: pointer;
 }
 
@@ -72,9 +71,23 @@
     background-color: aliceblue;
 }
 
-/* ---------Chrome/Opera/Safari------------, ------------Firefox 19+-----------, ----------------IE 10+-----------------, -----------Firefox 18- -----------*/
-.input_add-to-do::-webkit-input-placeholder, .input_add-to-do::-moz-placeholder, .input_add-to-do::-ms-input-placeholder, .input_add-to-do::-moz-placeholder{ 
+.add-to-do input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: #4162f6;
     font-family: 'Titillium Web', sans-serif;
-    font-size: 1.2em;
+    font-size: 20px;
+}
+.add-to-do input::-moz-placeholder { /* Firefox 19+ */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-to-do input:-ms-input-placeholder { /* IE 10+ */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
+}
+.add-to-do input:-moz-placeholder { /* Firefox 18- */
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
 }
